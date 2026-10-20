@@ -1,0 +1,90 @@
+{
+  "title": "Manzo Vainilla",
+  "subtitle": "(personaje ficticio · sátira)",
+  "characters": [
+    {
+      "name": "Narrador",
+      "voice": "es_MX-claude-high.onnx",
+      "on_screen": false,
+      "subtitle_color": "&H00FFFFFF"
+    },
+    {
+      "name": "Manzo",
+      "voice": "es_MX-ald-medium.onnx",
+      "length_scale": 1.05,
+      "subtitle_color": "&H0000FFFF",
+      "head": "square",
+      "eyes": "droopy",
+      "moustache": false,
+      "hair": "#050505",
+      "skin": "#d9ad8f",
+      "shirt": "#0a3fb8",
+      "tie": "#c01010",
+      "sweat": true,
+      "gender": "male",
+      "outfit": "suit",
+      "pants": "#141418",
+      "expression": "bored"
+    }
+  ],
+  "scenes": [
+    {
+      "board": "...",
+      "lines": [
+        {
+          "speaker": "Narrador",
+          "text": "Esta es la historia de Manzo Vainilla, el alcalde más preparado... según él."
+        }
+      ],
+      "escenario": {
+        "descripcion": "oficina de gobierno con escritorio, pizarrón y bandera, de día"
+      }
+    },
+    {
+      "board": {
+        "before": "2 + 2 = ...",
+        "text": "2 + 2 = 5 ?",
+        "reveal_at": 3.2
+      },
+      "lines": [
+        {
+          "speaker": "Manzo",
+          "text": "¡Ciudadanos! Soy un genio de las finanzas. A ver: dos más dos... son... ¿cinco?"
+        }
+      ]
+    },
+    {
+      "camera": "close",
+      "sign": {
+        "text": "PRÉSTAMO #47",
+        "signature": "Manzo~",
+        "signer": "Manzo"
+      },
+      "lines": [
+        {
+          "speaker": "Manzo",
+          "text": "Bueno, gobernar está difícil. ¡Mejor pido otro préstamo!"
+        }
+      ]
+    },
+    {
+      "counter": {
+        "label": "DEUDA: $",
+        "start": 1000000,
+        "growth": 1.9
+      },
+      "lines": [
+        {
+          "speaker": "Narrador",
+          "text": "Y así, el pueblo ya debe hasta la calculadora."
+        }
+      ]
+    }
+  ],
+  "thumbnail": {
+    "scene": 1,
+    "at": 4.5,
+    "text": "¡NO SABE SUMAR!",
+    "subtext": "...y pide otro préstamo"
+  }
+}

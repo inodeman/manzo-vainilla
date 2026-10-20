@@ -1,0 +1,17 @@
+title: "Manzo Vainilla"
+subtitle: "(prueba corta · ficción)"
+characters:
+  - {name: Narrador, voice: es_MX-claude-high.onnx, on_screen: false}
+  - name: Manzo
+    descripcion: "hombre alto, cara cuadrada, pelo negro corto, camisa azul con corbata roja, sin bigote, cara aburrida, gordito, nervioso"
+    subtitle_color: "&H0000FFFF"
+scenes:
+  - escenario: {descripcion: "plaza del pueblo con kiosco, bancas y árboles, día soleado"}
+    board: "PRESUPUESTO: $0"
+    lines:
+      - {speaker: Manzo, text: "Buenos días. Hoy no hay presupuesto."}
+  - escenario: {descripcion: "oficina vieja de gobierno, escritorio con papeles, ventana de noche"}
+    counter: {label: "DEUDA: $", start: 500000, growth: 2.0}
+    lines:
+      - {speaker: Narrador, text: "Y la deuda sigue creciendo."}
+thumbnail: {scene: 0, at: 1.0, text: "¡SIN DINERO!"}
