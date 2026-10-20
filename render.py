@@ -21,34 +21,29 @@ def wrap(txt,n=24):
     return out+[cur]
 def manzo(d,cx,cy,mouth,t,sweat=True,arm=0):
     # body: vanilla cream suit
-    d.rounded_rectangle([cx-170,cy+150,cx+170,cy+560],60,fill='#F3E5AB',outline='#7a5c2e',width=8)
+    d.rounded_rectangle([cx-170,cy+150,cx+170,cy+560],60,fill='#2f6fd6',outline='#7a5c2e',width=8)
     d.polygon([(cx-40,cy+150),(cx+40,cy+150),(cx,cy+260)],fill='white')
     d.polygon([(cx-18,cy+165),(cx+18,cy+165),(cx+10,cy+330),(cx,cy+350),(cx-10,cy+330)],fill='#c0392b')
     for s in(-1,1):
         ang=arm if s==1 else 0
         ex=cx+s*230; ey=cy+330-ang
-        d.line([(cx+s*160,cy+200),(ex,ey)],fill='#F3E5AB',width=60)
+        d.line([(cx+s*160,cy+200),(ex,ey)],fill='#2f6fd6',width=60)
         d.ellipse([ex-35,ey-35,ex+35,ey+35],fill='#f1c9a5',outline='#7a5c2e',width=5)
-    d.rectangle([cx-120,cy+560,cx-40,cy+700],fill='#e8d590');d.rectangle([cx+40,cy+560,cx+120,cy+700],fill='#e8d590')
+    d.rectangle([cx-120,cy+560,cx-40,cy+700],fill='#3a3a4a');d.rectangle([cx+40,cy+560,cx+120,cy+700],fill='#3a3a4a')
     d.ellipse([cx-150,cy+680,cx-20,cy+730],fill='#5b3a1a');d.ellipse([cx+20,cy+680,cx+150,cy+730],fill='#5b3a1a')
-    # huge head
-    d.ellipse([cx-230,cy-300,cx+230,cy+190],fill='#f1c9a5',outline='#7a5c2e',width=8)
-    d.chord([cx-200,cy-320,cx+200,cy-120],180,360,fill='#d8b25a')  # vanilla swirl hair
-    for k in range(3): d.arc([cx-150+k*60,cy-360,cx-30+k*60,cy-200],200,340,fill='#b8913a',width=10)
-    # eyes nervous
-    bl=abs(math.sin(t*1.3))>0.97
+    # square-ish head
+    d.rounded_rectangle([cx-210,cy-280,cx+210,cy+180],70,fill='#f1c9a5',outline='#3a2a1a',width=8)
+    d.rounded_rectangle([cx-215,cy-320,cx+215,cy-150],50,fill='#111111')
+    for k in range(5): d.polygon([(cx-200+k*90,cy-160),(cx-160+k*90,cy-100),(cx-120+k*90,cy-160)],fill='#111111')
     for s in(-1,1):
         ex=cx+s*85
-        if bl: d.line([ex-40,cy-60,ex+40,cy-60],fill='black',width=8)
-        else:
-            d.ellipse([ex-50,cy-110,ex+50,cy-10],fill='white',outline='black',width=5)
-            px=ex+12*math.sin(t*3)
-            d.ellipse([px-18,cy-78,px+18,cy-42],fill='black')
-        d.line([ex-45,cy-140+s*10,ex+45,cy-140-s*10],fill='#5b3a1a',width=12)
-    d.ellipse([cx-35,cy-30,cx+35,cy+40],fill='#e8a07a')
-    mo=int(10+50*mouth)
-    d.ellipse([cx-70,cy+70,cx+70,cy+70+mo],fill='#6b1f1f',outline='black',width=5)
-    d.line([cx-80,cy+60,cx-40,cy+50],fill='#5b3a1a',width=14);d.line([cx+40,cy+50,cx+80,cy+60],fill='#5b3a1a',width=14)
+        d.ellipse([ex-48,cy-80,ex+48,cy+5],fill='white',outline='black',width=5)
+        d.ellipse([ex-16,cy-40,ex+16,cy-8],fill='black')
+        d.chord([ex-52,cy-86,ex+52,cy+20],180,360,fill='#e0b48f',outline='black',width=5)  # droopy lids
+        d.line([ex-45,cy-110,ex+45,cy-105-s*0],fill='#111',width=10)
+    d.ellipse([cx-28,cy+10,cx+28,cy+60],fill='#e8a07a')
+    mo=int(6+40*mouth)
+    d.ellipse([cx-55,cy+95,cx+55,cy+95+mo],fill='#6b1f1f',outline='black',width=5)
     if sweat:
         for k in range(3):
             ph=(t*0.8+k*0.33)%1
